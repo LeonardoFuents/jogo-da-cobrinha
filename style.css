@@ -22,6 +22,26 @@ canvas {
     background-color: #ffffff;
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
     border-radius: 12px;
+<<<<<<< HEAD
+=======
+}
+
+/* Opcional: estilize um botão para reiniciar ou pausar o jogo */
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #004d40;
+>>>>>>> 5db4356f52cf5f2b66f9fd7e1b24f1c7948791d7
 }
 
 /* Opcional: estilize um botão para reiniciar ou pausar o jogo */

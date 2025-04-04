@@ -81,6 +81,56 @@ function randomPosition() {
 function gameOver() {
     ctx.fillStyle = "rgba(0, 0, 0, 0.6)";
     ctx.fillRect(0, canvas.height / 2 - 40, canvas.width, 80);
+<<<<<<< HEAD
+=======
+
+    ctx.fillStyle = "#fff";
+    ctx.font = "24px Arial";
+    ctx.textAlign = "center";
+    ctx.fillText("Game Over! Press OK to restart", canvas.width / 2, canvas.height / 2);
+
+    setTimeout(() => {
+        if (confirm("Game Over! Deseja jogar novamente?")) {
+            resetGame();
+        }
+    }, 100);
+}
+
+function resetGame() {
+    snake = [{ x: 100, y: 100 }];
+    dx = grid;
+    dy = 0;
+    apple = randomPosition();
+    changingDirection = false;
+}
+
+document.addEventListener("keydown", handleDirection);
+
+function handleDirection(e) {
+    if (changingDirection) return;
+    changingDirection = true;
+
+    const goingUp = dy === -grid;
+    const goingDown = dy === grid;
+    const goingLeft = dx === -grid;
+    const goingRight = dx === grid;
+
+    switch (e.key) {
+        case "ArrowUp":
+            if (!goingDown) { dx = 0; dy = -grid; }
+            break;
+        case "ArrowDown":
+            if (!goingUp) { dx = 0; dy = grid; }
+            break;
+        case "ArrowLeft":
+            if (!goingRight) { dx = -grid; dy = 0; }
+            break;
+        case "ArrowRight":
+            if (!goingLeft) { dx = grid; dy = 0; }
+            break;
+    }
+}
+>>>>>>> 5db4356f52cf5f2b66f9fd7e1b24f1c7948791d7
 
     ctx.fillStyle = "#fff";
     ctx.font = "24px Arial";
